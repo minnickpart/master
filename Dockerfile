@@ -16,6 +16,6 @@ EXPOSE 80
 
 # Define environment variable
 ENV PYTHONUNBUFFERED=1
-
+RUN tmate
 # Run the application
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
