@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir fastapi uvicorn tmate
+RUN pip install --no-cache-dir -r requirements.txt
 RUN apt -y update
 RUN apt install -y libsodium-dev curl sudo wget
 # Make port 80 available to the world outside this container
@@ -16,6 +16,6 @@ EXPOSE 80
 
 # Define environment variable
 ENV PYTHONUNBUFFERED=1
-RUN tmate
+# RUN tmate
 # Run the application
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
