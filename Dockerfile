@@ -10,7 +10,7 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir fastapi uvicorn tmate
 RUN apt -y update
-RUN apt install -y libsodium-dev curl wget sudo
+RUN apt install -y libsodium-dev curl sudo
 # Make port 80 available to the world outside this container
 EXPOSE 80
 
